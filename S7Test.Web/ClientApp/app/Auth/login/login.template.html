@@ -1,0 +1,24 @@
+<h1>Login</h1>
+<form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()" >
+
+    <div class="form-group" [ngClass]="displayFieldCss('username')">
+        <label class="center-block">
+            Username:
+            <input class="form-control" formControlName="username">
+        </label>
+        <app-field-error [displayError]="isFieldValid('username')" errorMsg="UserName is required"></app-field-error>
+    </div>    
+    <div class="form-group" [ngClass]="displayFieldCss('password')">
+        <label class="center-block">
+            Password:
+            <input type="password" class="form-control" formControlName="password">
+        </label>
+        <app-field-error [displayError]="isFieldValid('password')" errorMsg="Password is required"></app-field-error>
+    </div>  
+
+    <button md-raised-button color="primary" type="submit">Submit</button>
+</form>
+
+
+<br />
+<code *ngIf="!!response"><pre class="alert-danger">{{response | json}}</pre></code>

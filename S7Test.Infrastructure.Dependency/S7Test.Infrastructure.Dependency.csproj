@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+    <PackageReference Include="OpenIddict.EntityFrameworkCore" Version="2.0.0-*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\S7Test.Core.Service\S7Test.Core.Service.csproj" />
+    <ProjectReference Include="..\S7Test.Infrastructure.Data\S7Test.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\S7Test.Service\S7Test.Service.csproj" />
+  </ItemGroup>
+
+</Project>

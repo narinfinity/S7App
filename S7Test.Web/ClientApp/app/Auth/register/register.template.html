@@ -1,0 +1,51 @@
+<h1>Register</h1>
+
+<form [formGroup]="registerForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="form-group" [ngClass]="displayFieldCss('firstName')">
+        <label class="center-block">
+            First Name:
+            <input class="form-control" formControlName="firstName">
+        </label>
+        <app-field-error [displayError]="isFieldValid('firstName')" errorMsg="FirstName is required"></app-field-error>
+    </div>
+    <div class="form-group" [ngClass]="displayFieldCss('lastName')">
+        <label class="center-block">
+            Last Name:
+            <input class="form-control" formControlName="lastName">
+        </label>
+        <app-field-error [displayError]="isFieldValid('lastName')" errorMsg="LastName is required"></app-field-error>
+    </div>
+    
+    <div class="form-group" [ngClass]="displayFieldCss('email')">
+        <label class="center-block">
+            Email:
+            <input type="email" class="form-control" formControlName="email">
+        </label>
+        <app-field-error [displayError]="isFieldValid('email')" errorMsg="Enter a valid email"></app-field-error>
+    </div>
+    <div class="form-group" [ngClass]="displayFieldCss('userName')">
+        <label class="center-block">
+            Username:
+            <input class="form-control" formControlName="userName">
+        </label>
+        <app-field-error [displayError]="isFieldValid('userName')" errorMsg="UserName is required"></app-field-error>
+    </div>
+    <div class="form-group" [ngClass]="displayFieldCss('password')">
+        <label class="center-block">
+            Password:
+            <input type="password" class="form-control" formControlName="password">
+        </label>
+        <app-field-error [displayError]="isFieldValid('password')" errorMsg="Password is required"></app-field-error>
+    </div>
+    <div class="form-group" [ngClass]="displayFieldCss('confirmPassword')">
+        <label class="center-block">
+            Confirm Password:
+            <input type="password" class="form-control" formControlName="confirmPassword">
+        </label>
+        <app-field-error [displayError]="isFieldValid('confirmPassword')" errorMsg="ConfirmPassword is required"></app-field-error>
+    </div>
+    <button md-raised-button color="primary" type="submit" >Submit</button>
+</form>
+
+<br />
+<code *ngIf="!!response"><pre class="alert-danger">{{response | json}}</pre></code>

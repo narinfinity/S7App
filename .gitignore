@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+obj
+bin
+.user
+.vs
+TestApp.Web.sln.DotSettings.user
+TestApp.Web/TestApp.Web.csproj.user
